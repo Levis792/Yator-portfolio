@@ -25,29 +25,32 @@ export const HeroSection = () => {
             className="order-2 lg:order-1"
           >
             <p className="text-accent font-medium mb-4">Hello, I'm</p>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              John Doe
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Levis Yator
               <span className="text-accent">.</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              A passionate <span className="text-foreground font-medium">Full-Stack Developer</span> & <span className="text-foreground font-medium">UI/UX Designer</span> crafting beautiful digital experiences that make a difference.
+            <p className="text-lg text-accent font-medium mb-4">
+              Digital Creator & Constant Learner
+            </p>
+            <p className="text-muted-foreground mb-8 max-w-lg leading-relaxed">
+              I am a passionate creator who thrives on learning new things and building digital experiences.
             </p>
 
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
-                href="mailto:hello@johndoe.com"
+                href="mailto:levis7099@gmail.com"
                 className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Mail size={18} />
-                <span className="text-sm">hello@johndoe.com</span>
+                <span className="text-sm">levis7099@gmail.com</span>
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+254759097795"
                 className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Phone size={18} />
-                <span className="text-sm">+1 (234) 567-890</span>
+                <span className="text-sm">+254759097795</span>
               </a>
             </div>
 
@@ -81,16 +84,27 @@ export const HeroSection = () => {
               <div className="absolute -inset-4 bg-accent/10 rounded-full blur-3xl" />
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-full" />
               
-              {/* Profile placeholder */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-secondary border-4 border-border overflow-hidden shadow-xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-slate-200 flex items-center justify-center">
-                      <span className="text-4xl text-slate-400">👤</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Profile Image</p>
-                  </div>
-                </div>
+              {/* Profile image */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-secondary border-4 border-accent/30 overflow-hidden shadow-xl">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Levis Yator" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = `
+                      <div class="absolute inset-0 flex items-center justify-center bg-secondary">
+                        <div class="text-center">
+                          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
+                            <span class="text-4xl">👤</span>
+                          </div>
+                          <p class="text-sm text-muted-foreground">Profile Image</p>
+                        </div>
+                      </div>
+                    `;
+                  }}
+                />
               </div>
             </div>
           </motion.div>

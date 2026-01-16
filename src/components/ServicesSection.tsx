@@ -1,43 +1,21 @@
 import { motion } from "framer-motion";
-import { 
-  Code, 
-  Palette, 
-  Smartphone, 
-  Globe, 
-  Database, 
-  Zap 
-} from "lucide-react";
+import { Code, Video, Layout } from "lucide-react";
 
 const services = [
   {
     icon: Code,
     title: "Web Development",
-    description: "Building modern, scalable web applications using React, TypeScript, and cutting-edge technologies.",
+    description: "Building modern, responsive websites and web applications using the latest technologies.",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Creating intuitive and beautiful user interfaces that enhance user experience and engagement.",
+    icon: Video,
+    title: "Video & Content Editing",
+    description: "Creating engaging video content and editing services for various platforms and purposes.",
   },
   {
-    icon: Smartphone,
-    title: "Responsive Design",
-    description: "Ensuring your website looks and works perfectly on all devices, from mobile to desktop.",
-  },
-  {
-    icon: Globe,
-    title: "SEO Optimization",
-    description: "Improving your website's visibility and ranking on search engines for better organic reach.",
-  },
-  {
-    icon: Database,
-    title: "Backend Development",
-    description: "Developing robust server-side solutions with secure APIs and efficient database management.",
-  },
-  {
-    icon: Zap,
-    title: "Performance Optimization",
-    description: "Optimizing load times and overall performance to deliver fast, smooth user experiences.",
+    icon: Layout,
+    title: "WordPress Design",
+    description: "Designing and developing custom WordPress websites tailored to your specific needs.",
   },
 ];
 
@@ -57,7 +35,7 @@ export const ServicesSection = () => {
             My Services<span className="text-accent">.</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I offer a comprehensive range of services to help bring your digital vision to life.
+            I offer a range of digital services to help bring your vision to life.
           </p>
         </motion.div>
 
