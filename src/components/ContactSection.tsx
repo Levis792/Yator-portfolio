@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -14,13 +13,11 @@ const contactSchema = z.object({
 });
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@johndoe.com", href: "mailto:hello@johndoe.com" },
-  { icon: Phone, label: "Phone", value: "+1 (234) 567-890", href: "tel:+1234567890" },
-  { icon: MapPin, label: "Location", value: "San Francisco, CA", href: null },
+  { icon: Mail, label: "Email", value: "levis7099@gmail.com", href: "mailto:levis7099@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+254759097795", href: "tel:+254759097795" },
 ];
 
 export const ContactSection = () => {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -32,7 +29,6 @@ export const ContactSection = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -43,7 +39,6 @@ export const ContactSection = () => {
     setIsSubmitting(true);
     setErrors({});
 
-    // Validate form data
     const result = contactSchema.safeParse(formData);
     
     if (!result.success) {
@@ -58,13 +53,9 @@ export const ContactSection = () => {
       return;
     }
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-    toast({
-      title: "Message Sent Successfully! 🎉",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
+    alert("Message Sent! Thank you for reaching out. I'll get back to you soon!");
 
     setFormData({ name: "", email: "", message: "" });
     setIsSubmitting(false);
@@ -85,7 +76,7 @@ export const ContactSection = () => {
             Contact Me<span className="text-accent">.</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
+            Have a project in mind? Let's discuss how we can work together.
           </p>
         </motion.div>
 
@@ -103,7 +94,7 @@ export const ContactSection = () => {
                 Let's Connect
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I'm always open to discussing new projects, creative ideas, or opportunities to collaborate.
               </p>
             </div>
 
@@ -115,16 +106,12 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">{item.label}</p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-foreground font-medium hover:text-accent transition-colors"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-foreground font-medium">{item.value}</p>
-                    )}
+                    <a
+                      href={item.href}
+                      className="text-foreground font-medium hover:text-accent transition-colors"
+                    >
+                      {item.value}
+                    </a>
                   </div>
                 </div>
               ))}

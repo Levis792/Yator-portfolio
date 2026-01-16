@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
   { name: "Contact", href: "#contact" },
 ];
@@ -46,9 +45,9 @@ export const Navbar = () => {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="font-display text-xl font-bold text-foreground"
+            className="font-display text-2xl font-bold text-foreground"
           >
-            Portfolio<span className="text-accent">.</span>
+            LY<span className="text-accent">.</span>
           </a>
 
           {/* Desktop Navigation */}

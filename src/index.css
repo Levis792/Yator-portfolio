@@ -1,120 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-/* Professional Portfolio Design System - Slate Grey & Electric Blue */
+/* Levis Yator Portfolio - Dark Theme */
 
 @layer base {
   :root {
-    /* Core palette */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
-
-    /* Slate Grey Primary */
-    --primary: 215 20% 25%;
-    --primary-foreground: 210 20% 98%;
-
-    /* Light slate for secondary surfaces */
-    --secondary: 210 15% 92%;
-    --secondary-foreground: 215 20% 25%;
-
-    /* Muted slate tones */
-    --muted: 210 15% 95%;
-    --muted-foreground: 215 15% 45%;
-
-    /* Electric Blue Accent */
-    --accent: 210 100% 50%;
-    --accent-foreground: 0 0% 100%;
-
+    /* Dark Theme - #121212 background, #FFFFFF text, #00d4ff accent */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 187 100% 50%;
+    --primary-foreground: 0 0% 7%;
+    
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 187 100% 50%;
+    --accent-foreground: 0 0% 7%;
+    --accent-glow: 187 100% 60%;
+    
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 210 100% 50%;
-
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 187 100% 50%;
+    
     --radius: 0.75rem;
-
-    /* Custom tokens */
-    --accent-glow: 210 100% 60%;
-    --slate-50: 210 20% 98%;
-    --slate-100: 210 18% 96%;
-    --slate-200: 210 16% 90%;
-    --slate-300: 210 14% 80%;
-    --slate-400: 210 12% 60%;
-    --slate-500: 215 15% 45%;
-    --slate-600: 215 18% 35%;
-    --slate-700: 215 20% 25%;
-    --slate-800: 215 25% 15%;
-    --slate-900: 215 30% 8%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 20% 98%) 0%, hsl(210 15% 95%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(210 100% 60%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 15% 98%) 100%);
-
+    
     /* Shadows */
-    --shadow-sm: 0 1px 2px hsl(215 25% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.08), 0 2px 4px -1px hsl(215 25% 15% / 0.04);
-    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.08), 0 4px 6px -2px hsl(215 25% 15% / 0.04);
-    --shadow-xl: 0 20px 25px -5px hsl(215 25% 15% / 0.1), 0 10px 10px -5px hsl(215 25% 15% / 0.04);
-    --shadow-accent: 0 4px 14px hsl(210 100% 50% / 0.25);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+    --shadow-accent: 0 4px 14px 0 hsl(187 100% 50% / 0.3);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 187 100% 50%;
   }
 
   .dark {
-    --background: 215 30% 8%;
-    --foreground: 210 20% 98%;
-
-    --card: 215 25% 12%;
-    --card-foreground: 210 20% 98%;
-
-    --popover: 215 25% 12%;
-    --popover-foreground: 210 20% 98%;
-
-    --primary: 210 20% 98%;
-    --primary-foreground: 215 25% 15%;
-
-    --secondary: 215 20% 18%;
-    --secondary-foreground: 210 20% 98%;
-
-    --muted: 215 20% 18%;
-    --muted-foreground: 215 15% 60%;
-
-    --accent: 210 100% 55%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 215 20% 20%;
-    --input: 215 20% 20%;
-    --ring: 210 100% 55%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 187 100% 50%;
+    --primary-foreground: 0 0% 7%;
+    
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 187 100% 50%;
+    --accent-foreground: 0 0% 7%;
+    --accent-glow: 187 100% 60%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 187 100% 50%;
   }
 }
 
@@ -128,7 +100,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
 
@@ -143,7 +115,7 @@
   }
 
   .nav-link {
-    @apply relative text-muted-foreground hover:text-foreground transition-colors duration-200;
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 relative;
   }
 
   .nav-link::after {
@@ -160,7 +132,12 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent);
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-glow;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
